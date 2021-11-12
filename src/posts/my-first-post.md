@@ -10,6 +10,8 @@ tags:
   - center
   - right
 ---
+![icon](/static/img/icon.svg "test insert image")
+
 # This is a Heading h1
 
 ## This is a Heading h2
