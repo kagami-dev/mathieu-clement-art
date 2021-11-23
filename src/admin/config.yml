@@ -12,24 +12,113 @@ public_folder: "/static/img"
 local_backend: true
 # publish_mode: editorial_workflow
 collections:
-  - label: "Blog"
-    name: "blog"
-    folder: "src/posts"
+  - label: "Accueil"
+    name: "home"
+    editor:
+      preview: false
+    files:
+      - label: "Image Accueil"
+        name: "home-image"
+        file: "src/_data/home.yaml"
+        fields: 
+          - label: "Image Accueil"
+            name: "image"
+            file: "src/_data/home.yaml"
+            widget: "image"
+            media_library:
+              config:
+              multiple: false
+  - label: "Artworks"
+    name: "artworks"
+    folder: "src/artworks"
     create: true
     editor:
       preview: false
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Technique", name: "technique", widget: "string" }
+      - { label: "Format", name: "format", widget: "string" }
       - widget: select
-        label: "tags"
-        name: "tags"
-        multiple: true
+        label: "Medium"
+        name: "Medium"
+        multiple: false
         create: true
-        options: ["Tags", "created", "from", "config.yml"]
+        options: ["Peinture", "dessin"]
+      - label: "Oeuvre"
+        name: "image"
+        widget: "image"
+        choose_url: true
+        media_library:
+          config:
+          multiple: false
+  - label: "Actualités"
+    name: "actus"
+    folder: "src/news"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Lieu", name: "location", widget: "string" }
+      - { label: "Date debut", name: "startdate", widget: "date" }
+      - { label: "Date fin", name: "enddate", widget: "date" }
+      - { label: URL, name: url, widget: string }
+      - widget: select
+        label: "Status"
+        name: "status"
+        multiple: false
+        create: true
+        options: ["active", "over"]
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        choose_url: true
+        media_library:
+          config:
+          multiple: false
+  - label: "Bio"
+    name: "bio"
+    editor:
+      preview: false
+    files: 
+      - label: "Biographie"
+        name: "bio"
+        file: "src/_data/biography.yaml"
+        fields: 
+          - label: "Image"
+            name: "image"
+            widget: "image"
+            choose_url: true
+            media_library:
+              config:
+              multiple: false
+          - label: "LifeEvent"
+            name: "lifeevent"
+            widget: list
+            create: true
+            editor:
+              preview: false
+            fields:
+              - { label: "Année", name: "year", widget: "date" }
+              - { label: "Description", name: "descriptiontion", widget: "string" }
+      
+  # - label: "Blog"
+  #   name: "blog"
+  #   folder: "src/posts"
+  #   create: true
+  #   editor:
+  #     preview: false
+  #   fields:
+  #     - { label: "Title", name: "title", widget: "string" }
+  #     - { label: "Description", name: "description", widget: "string" }
+  #     - { label: "Author", name: "author", widget: "string" }
+  #     - { label: "Publish Date", name: "date", widget: "datetime" }
+  #     - { label: "Body", name: "body", widget: "markdown" }
+  #     - widget: select
+  #       label: "tags"
+  #       name: "tags"
+  #       multiple: true
+  #       create: true
+  #       options: ["Tags", "created", "from", "config.yml"]
   - label: "Settings"
     name: "settings"
     editor:

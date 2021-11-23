@@ -5,18 +5,31 @@ path: home
 ---
 
 <div class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
-  <h1>
-    Welcome to
-    <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-      {{title}}
-    </strong>
-  </h1>
+  <!-- <img src="{{biography.image}}" alt=""> -->
+  <!-- {% for lifeevent in biography.lifeevent %}
+    <div>{{lifeevent.year.toUTCString()}} {{lifeevent.descriptiontion }}</div>
+  {% endfor %} -->
 
-  <p>
-    <abbr title="netlify cms, eleventy, alpine js & tailwind css">NEAT</abbr>
-    Starter Template. Get Started by editing.
-    <code class="bg-gray-100 text-blue-800 p-1">/index.njk</code>
-  </p>
+  {% set newslist = collections.news %}
+  {% for news in newslist %}
+    <div>{{news.data.title}}</div>
+    <div>{{news.data.startdate.toUTCString()}}</div>
+  {% endfor %}
 
-  {% include "./_includes/partials/content.html" %}
+  <strong>Mathieu Clement</strong>
+
+  <img src="{{home.image}}" alt="">
+
+  <!-- {% set artworkslist = collections.artworks %}
+
+
+  {% for artwork in artworkslist %}
+    {% if artwork.data.Medium == "dessin" %}
+      <div class="my-8 text-right">
+        <img class="max-w-xl" src="{{artwork.data.image}}" alt="{{artwork.data.description}}">
+        <div>{{ artwork.data.technique }}</div>
+        <div>{{ artwork.data.format }}</div>
+      </div>
+    {% endif %}
+  {% endfor %} -->
 </div>
