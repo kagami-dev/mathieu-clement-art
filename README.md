@@ -55,6 +55,15 @@ npm run build
 npm run start
 ```
 
+### Local CMS
+
+```
+npx netlify-cms-proxy-server
+```
+
+
 ## Author
 
 Surjith S M ( [@surjithctly](https://surjithctly.in/) )
+
+
