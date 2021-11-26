@@ -12,6 +12,8 @@ module.exports = {
     },
     extend: {
       colors: {
+        current: 'currentColor',
+        transparent: 'currentColor',
         lightGray: {
           DEFAULT: '#F0EFEA'
         },
@@ -37,6 +39,11 @@ module.exports = {
       'serif': ['El Messiri', 'serif']
      }
   },
-  variants: {},
+  variants: {
+    extend: {
+      opacity: ['active', 'hover'],
+      borderOpacity: ['active'],
+    }
+  },
   plugins: [require("@tailwindcss/typography")],
 };

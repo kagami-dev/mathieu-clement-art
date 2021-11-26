@@ -25,56 +25,76 @@ collections:
             name: "image"
             file: "src/_data/home.yaml"
             widget: "image"
+            choose_url: false
             media_library:
               config:
               multiple: false
-  - label: "Artworks"
-    name: "artworks"
-    folder: "src/artworks"
-    create: true
-    editor:
+  - label: "Gallerie"
+    name: "gallery"
+    editor: 
       preview: false
-    fields:
-      - { label: "Technique", name: "technique", widget: "string" }
-      - { label: "Format", name: "format", widget: "string" }
-      - widget: select
-        label: "Medium"
-        name: "Medium"
-        multiple: false
-        create: true
-        options: ["Peinture", "dessin"]
-      - label: "Oeuvre"
-        name: "image"
-        widget: "image"
-        choose_url: true
-        media_library:
-          config:
-          multiple: false
+    files:
+      - label: "Liste d'oeuvres" 
+        name: "artwork-list"
+        file: "src/_data/artworks-list.json"
+        extension: "json"
+        fields:
+          - label: "Oeuvres"
+            name: "artworks"
+            widget: "list"
+            editor:
+              preview: false
+            fields: 
+              - label: "Oeuvre"
+                name: "image"
+                widget: "image"
+                choose_url: false
+                media_library:
+                  config:
+                  multiple: false
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                summary: '{{fields.name}}'
+                field: {label: Name, name: name, widget: string}
+              - { label: "Technique", name: "technique", widget: "string" }
+              - { label: "Format", name: "format", widget: "string" }
+              - { label: "Date", name: "date", widget: "date" }
+              - widget: select
+                label: "Medium"
+                name: "medium"
+                multiple: false
+                create: true
+                options: ["Peinture", "dessin"]
   - label: "Actualités"
     name: "actus"
-    folder: "src/news"
-    create: true
     editor:
       preview: false
-    fields:
-      - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Lieu", name: "location", widget: "string" }
-      - { label: "Date debut", name: "startdate", widget: "date" }
-      - { label: "Date fin", name: "enddate", widget: "date" }
-      - { label: URL, name: url, widget: string }
-      - widget: select
-        label: "Status"
-        name: "status"
-        multiple: false
-        create: true
-        options: ["active", "over"]
-      - label: "Image"
-        name: "image"
-        widget: "image"
-        choose_url: true
-        media_library:
-          config:
-          multiple: false
+    files:
+      - label: "Évènements"
+        name: "events"
+        file: "src/_data/events.yaml"
+        fields:
+          - label: "Évènement"
+            name: event
+            widget: list
+            create: true
+            editor:
+              preview: false
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Lieu", name: "location", widget: "string" }
+              - { label: "Date debut", name: "startdate", widget: "date" }
+              - { label: "Date fin", name: "enddate", widget: "date" }
+              - { label: URL, name: url, widget: string }
+              - { label: "Passée?", name: outdated, widget: boolean, default: false }
+              - label: "Image"
+                name: "image"
+                widget: "image"
+                choose_url: false
+                media_library:
+                  config:
+                  multiple: false
   - label: "Bio"
     name: "bio"
     editor:
@@ -87,71 +107,16 @@ collections:
           - label: "Image"
             name: "image"
             widget: "image"
-            choose_url: true
+            choose_url: false
             media_library:
               config:
               multiple: false
-          - label: "LifeEvent"
-            name: "lifeevent"
+          - label: "Life Event"
+            name: "lifeEvent"
             widget: list
             create: true
             editor:
               preview: false
             fields:
-              - { label: "Année", name: "year", widget: "date" }
-              - { label: "Description", name: "descriptiontion", widget: "string" }
-      
-  # - label: "Blog"
-  #   name: "blog"
-  #   folder: "src/posts"
-  #   create: true
-  #   editor:
-  #     preview: false
-  #   fields:
-  #     - { label: "Title", name: "title", widget: "string" }
-  #     - { label: "Description", name: "description", widget: "string" }
-  #     - { label: "Author", name: "author", widget: "string" }
-  #     - { label: "Publish Date", name: "date", widget: "datetime" }
-  #     - { label: "Body", name: "body", widget: "markdown" }
-  #     - widget: select
-  #       label: "tags"
-  #       name: "tags"
-  #       multiple: true
-  #       create: true
-  #       options: ["Tags", "created", "from", "config.yml"]
-  - label: "Settings"
-    name: "settings"
-    editor:
-      preview: false
-    files:
-      - label: "Navigation"
-        name: "items"
-        file: "src/_data/navigation.yaml"
-        fields:
-          - label: Nav Items
-            name: items
-            widget: list
-            allow_add: false
-            collapsed: false
-            fields:
-              - { label: Title, name: text, widget: string }
-              - { label: URL, name: url, widget: string }
-      - label: "Quick Links"
-        name: "links"
-        file: "src/_data/quicklinks.yaml"
-        fields:
-          - label: Nav Items
-            name: links
-            widget: list
-            collapsed: false
-            fields:
-              - { label: Title, name: title, widget: string }
-              - { label: URL, name: url, widget: string }
-              - { label: Description, name: desc, widget: string }
-      - label: "Meta Settings"
-        name: "settings"
-        file: "src/_data/settings.yaml"
-        fields:
-          - { label: Name, name: name, widget: string }
-          - { label: Author, name: author, widget: string }
-          - { label: URL, name: url, widget: string }
+              - { label: "Année", name: "year", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }

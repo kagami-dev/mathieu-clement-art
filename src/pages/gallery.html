@@ -1,0 +1,42 @@
+---
+title: Oeuvres
+eleventyNavigation:
+  key: Oeuvres
+  order: 1
+pagination:
+  data: artworks-list.artworks
+  size: 3
+---
+
+<div class="container flex flex-row">
+	<div class="text-gold font-serif text-lg hidden lg:block mr-10 self-center">Mathieu<br>Clement</div>
+	<div>
+		<div class="italic mb-4">Filtres</div>
+		<div class="text-gold flex flex-row gap-2 mb-2">
+			<button class="btn-pill btn-pill-filter">Séries</button>
+			<button class="btn-pill btn-pill-filter active">Peinture</button>
+			<button class="btn-pill btn-pill-filter active">Dessin</button>
+			<button class="btn-pill btn-pill-filter">Années</button>
+		</div>
+		<div class="flex flex-row flex-wrap gap-2 max-w-prose">
+			{% assign allTags = artworks-list.artworks | map: 'tags' | split:',' | uniq %}
+			{% for tag in allTags %}
+			<button class="btn-pill btn-pill-filter">{{tag | capitalize}}</button>
+			{% endfor%}
+		</div>
+		<div class="py-16 lg:grid lg:grid-cols-3 lg:gap-24">
+			{% for artwork in pagination.items %}
+			<div class="flex flex-col items-end">
+				<div><img class="" src="{{artwork.image}}" alt=""></div>
+				<div>{{artwork.technique}}</div>
+				<div>{{artwork.format}}</div>
+			</div>
+			{% endfor%}
+		</div>
+		<nav>
+			{%for page in pagination.hrefs %}
+				<a href="{{page}}">{{forloop.index}}</a>
+			{%endfor%}
+		</nav>
+	</div>
+</div>

@@ -2,6 +2,8 @@ const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const { configFunction } = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventyConfig) {
   // Disable automatic use of your .gitignore
@@ -17,9 +19,28 @@ module.exports = function (eleventyConfig) {
     );
   });
 
+  eleventyConfig.addFilter("sortByYear", (array) => {
+    return array.sort(function(a, b) {
+      return parseFloat(a.year) - parseFloat(b.year);
+    });
+  })
+
+  eleventyConfig.addFilter("sortByDate", (array) => {
+    return array.sort(function(a, b) {
+      return parseFloat(a.date) - parseFloat(b.date);
+    });
+  }) 
+  // eleventyConfig.addFilter('categoryFilter', function(collection, category) {
+  //   if (!category) return collection;
+  //   const filtered = collection.filter(item => item.data.category == category);
+  //   return filtered;
+  // });
+
   // Syntax Highlighting for Code blocks
   eleventyConfig.addPlugin(syntaxHighlight);
 
+  //NAV PLUGIN
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
   // To Support .yaml Extension in _data
   // You may remove this if you can use JSON
   eleventyConfig.addDataExtension("yaml", (contents) =>
@@ -61,6 +82,6 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: "src",
     },
-    htmlTemplateEngine: "njk",
+    htmlTemplateEngine: "liquid",
   };
 };

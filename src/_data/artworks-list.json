@@ -1,0 +1,44 @@
+{
+  "artworks": [
+    {
+      "date": "2021-11-26T11:49:28.297Z",
+      "image": "/static/img/stepan-alekseev8.jpg",
+      "tags": [
+        "Character Design"
+      ],
+      "technique": "Digital",
+      "format": "1920x1080px",
+      "medium": "Peinture"
+    },
+    {
+      "date": "2021-11-02T11:50:07.406Z",
+      "image": "/static/img/stepan-alekseev27.jpg",
+      "tags": [
+        "Scene"
+      ],
+      "technique": "Fusain",
+      "format": "15x15cm",
+      "medium": "dessin"
+    },
+    {
+      "date": "2021-11-26T13:33:49.325Z",
+      "image": "/static/img/stepan-alekseev-01-s.jpg",
+      "tags": [
+        "Character Design"
+      ],
+      "technique": "Digital",
+      "medium": "Peinture",
+      "format": "12x12"
+    },
+    {
+      "date": "2021-11-26T13:34:18.122Z",
+      "image": "/static/img/cake.jpg",
+      "tags": [
+        "Cat"
+      ],
+      "technique": "Photographie",
+      "format": "12x12cm",
+      "medium": "dessin"
+    }
+  ]
+}

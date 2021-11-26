@@ -1,35 +1,20 @@
 ---
 layout: default
-title: Neat Starter
+title: Mathieu Clément
 path: home
 ---
 
-<div class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
-  <!-- <img src="{{biography.image}}" alt=""> -->
-  <!-- {% for lifeevent in biography.lifeevent %}
-    <div>{{lifeevent.year.toUTCString()}} {{lifeevent.descriptiontion }}</div>
-  {% endfor %} -->
+<div class="container lg:px-0 mx-auto">
+  <div class="">
+    <div class="font-bold">Actu</div>
+    {% for event in events.event %}
+    <div class="font-semibold">{{event.title}}</div>
+    <div>{{event.location}}</div>
+    <div class="mb-3">du {{event.startdate | readableDate }} au {{event.enddate | readableDate }}</div>
+    {% endfor %}
+  </div>
 
-  {% set newslist = collections.news %}
-  {% for news in newslist %}
-    <div>{{news.data.title}}</div>
-    <div>{{news.data.startdate.toUTCString()}}</div>
-  {% endfor %}
+  <strong class="text-8xl absolute bottom-0 font-serif text-gold">Mathieu<br>Clement</strong>
 
-  <strong>Mathieu Clement</strong>
-
-  <img src="{{home.image}}" alt="">
-
-  <!-- {% set artworkslist = collections.artworks %}
-
-
-  {% for artwork in artworkslist %}
-    {% if artwork.data.Medium == "dessin" %}
-      <div class="my-8 text-right">
-        <img class="max-w-xl" src="{{artwork.data.image}}" alt="{{artwork.data.description}}">
-        <div>{{ artwork.data.technique }}</div>
-        <div>{{ artwork.data.format }}</div>
-      </div>
-    {% endif %}
-  {% endfor %} -->
 </div>
+<img class="clip-circle-50 absolute w-3/4 -bottom-16 -right-64 " src="{{home.image}}" alt="">
