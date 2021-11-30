@@ -11,20 +11,20 @@ permalink: /gallery/
 	<div>
 		<div class="italic mb-4">Filtres</div>
 		<div class="text-gold flex flex-row gap-2 mb-2">
-			<button class="btn-pill btn-pill-filter">Séries</button>
-			<button class="btn-pill btn-pill-filter active">Peinture</button>
-			<button class="btn-pill btn-pill-filter active">Dessin</button>
+			<button class="series-toggle btn-pill btn-pill-filter">Séries</button>
+			<button class="paintings-filter btn-pill btn-pill-filter active">Peinture</button>
+			<button class="drawings-filter btn-pill btn-pill-filter active">Dessin</button>
 			<button class="btn-pill btn-pill-filter">Années</button>
 		</div>
-		<div class="flex flex-row flex-wrap gap-2 max-w-prose">
-			{% assign allTags = artworks-list.artworks | map: 'tags' | split:',' | uniq %}
+		<div class="tag-list hidden flex flex-row flex-wrap gap-2 max-w-prose">
+			{% assign allTags = artworkList.artworks | map: 'tags' | split:',' | uniq %}
 			{% for tag in allTags %}
-			<button class="btn-pill btn-pill-filter">{{tag | capitalize}}</button>
+			<button tag="{{tag | downcase | strip | remove: " "}}" class="btn-pill btn-pill-filter series-filter">{{tag | capitalize}}</button>
 			{% endfor%}
 		</div>
 		<div class="py-16 lg:grid lg:grid-cols-3 lg:gap-24">
-			{% for artwork in artworks-list.artworks %}
-			<div class="gallery-item flex flex-col items-end">
+			{% for artwork in artworkList.artworks %}
+			<div class="gallery-item flex flex-col items-end" medium="{{artwork.medium}}" tags="{{artwork.tags | join(',') | downcase | strip | remove: " "}}">
 				<button><img class="" src="{{artwork.image}}" alt=""></button>
 				<div>{{artwork.technique}}</div>
 				<div>{{artwork.format}}</div>

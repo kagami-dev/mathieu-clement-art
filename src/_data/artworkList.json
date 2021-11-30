@@ -8,7 +8,8 @@
       ],
       "technique": "Digital",
       "format": "1920x1080px",
-      "medium": "Peinture"
+      "medium": "peinture",
+      "alt": "a dude in armor"
     },
     {
       "date": "2021-11-02T11:50:07.406Z",
@@ -18,7 +19,8 @@
       ],
       "technique": "Fusain",
       "format": "15x15cm",
-      "medium": "dessin"
+      "medium": "dessin",
+      "alt": "bunch of dudes in a forest"
     },
     {
       "date": "2021-11-26T13:33:49.325Z",
@@ -27,8 +29,9 @@
         "Character Design"
       ],
       "technique": "Digital",
-      "medium": "Peinture",
-      "format": "12x12"
+      "medium": "peinture",
+      "format": "12x12",
+      "alt": "a standing dude"
     },
     {
       "date": "2021-11-26T13:34:18.122Z",
@@ -38,7 +41,8 @@
       ],
       "technique": "Photographie",
       "format": "12x12cm",
-      "medium": "dessin"
+      "medium": "dessin",
+      "alt": "a cool cat"
     }
   ]
 }

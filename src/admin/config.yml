@@ -35,8 +35,8 @@ collections:
       preview: false
     files:
       - label: "Liste d'oeuvres" 
-        name: "artwork-list"
-        file: "src/_data/artworks-list.json"
+        name: "artworkList"
+        file: "src/_data/artworkList.json"
         extension: "json"
         fields:
           - label: "Oeuvres"
@@ -58,6 +58,7 @@ collections:
                 summary: '{{fields.name}}'
                 field: {label: Name, name: name, widget: string}
               - { label: "Technique", name: "technique", widget: "string" }
+              - { label: "Description", name: "alt", widget: "string" }
               - { label: "Format", name: "format", widget: "string" }
               - { label: "Date", name: "date", widget: "date" }
               - widget: select
@@ -65,7 +66,7 @@ collections:
                 name: "medium"
                 multiple: false
                 create: true
-                options: ["Peinture", "dessin"]
+                options: ["peinture", "dessin"]
   - label: "Actualités"
     name: "actus"
     editor:
