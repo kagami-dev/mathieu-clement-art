@@ -3,9 +3,7 @@ title: Oeuvres
 eleventyNavigation:
   key: Oeuvres
   order: 1
-pagination:
-  data: artworks-list.artworks
-  size: 3
+permalink: /gallery/
 ---
 
 <div class="container flex flex-row">
@@ -25,18 +23,15 @@ pagination:
 			{% endfor%}
 		</div>
 		<div class="py-16 lg:grid lg:grid-cols-3 lg:gap-24">
-			{% for artwork in pagination.items %}
-			<div class="flex flex-col items-end">
-				<div><img class="" src="{{artwork.image}}" alt=""></div>
+			{% for artwork in artworks-list.artworks %}
+			<div class="gallery-item flex flex-col items-end">
+				<button><img class="" src="{{artwork.image}}" alt=""></button>
 				<div>{{artwork.technique}}</div>
 				<div>{{artwork.format}}</div>
 			</div>
 			{% endfor%}
 		</div>
-		<nav>
-			{%for page in pagination.hrefs %}
-				<a href="{{page}}">{{forloop.index}}</a>
-			{%endfor%}
-		</nav>
 	</div>
 </div>
+
+<script type="text/javascript" src="/static/js/gallery.js"></script>

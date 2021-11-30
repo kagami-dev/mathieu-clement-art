@@ -28,6 +28,10 @@ h3 {
   @apply border-opacity-100;
 }
 
+.occupy-row {
+  grid-column: span 3;
+}
+
 @layer utilities {
   .clip-circle-50 {
     clip-path: circle(50%);

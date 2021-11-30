@@ -6,3 +6,5 @@ node_modules/
 *git/
 package-lock.json
 .env
+.clj-kondo/
+.lsp/
