@@ -1,0 +1,25 @@
+artworks:
+  - date: 2020-09-02T20:39:23.634Z
+    image: /static/img/stepan-alekseev8.jpg
+    tags:
+      - Cool Dudes
+    technique: Digital
+    alt: a cool dude
+    format: 1330x1286px
+    medium: dessin
+  - date: 2021-11-30T21:23:14.474Z
+    image: /static/img/cake.jpg
+    tags:
+      - Animals
+    technique: Photography
+    alt: a cat
+    format: 12x12px
+    medium: peinture
+  - date: 2021-11-12T21:42:31.945Z
+    image: /static/img/stepan-alekseev-01-s.jpg
+    tags:
+      - Cool Dudes
+    technique: Digital
+    alt: another cool dude
+    format: 12x12m
+    medium: dessin

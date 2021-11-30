@@ -10,7 +10,7 @@ eleventyNavigation:
   <strong class="text-9xl">Mathieu<br>Clement</strong>
     <div class="">
       <div class="font-bold">Biographie</div>
-      {% assign events = biography.lifeEvent | sortByYear %}
+      {% assign events = biography.lifeEvent %}
       {% for event in events %}
         <div class="font-semibold">{{event.year}}</div>
         <span>{{event.description}}</span>
@@ -18,10 +18,11 @@ eleventyNavigation:
     </div>
     <div class="">
       <div class="font-bold">Expositions</div>
-      {% assign events = biography.lifeEvent | sortByYear %}
-      {% for event in events %}
-        <div class="font-semibold">{{event.year}}</div>
-        <span>{{event.description}}</span>
+      {% assign artEvents = eventList.events | sortbyStartDate %}
+      {% for event in artEvents%}
+        {%if event.outdated == true %}
+        <div class="">{{event.startDate | readableDate | split: " " | last }}  <span class="font-semibold">{{event.title}}</span> {{event.location}}</div>
+        {%endif%}
       {% endfor %}
   </div>
 </div>

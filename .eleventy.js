@@ -44,18 +44,13 @@ module.exports = function (eleventyConfig) {
     return array.sort(function(a, b) {
       return parseFloat(a.year) - parseFloat(b.year);
     });
-  })
+  });
 
-  eleventyConfig.addFilter("sortByDate", (array) => {
+  eleventyConfig.addFilter("sortByStartDate", (array) => {
     return array.sort(function(a, b) {
-      return parseFloat(a.date) - parseFloat(b.date);
+      return parseFloat(a.startDate) - parseFloat(b.startDate);
     });
-  }) 
-  // eleventyConfig.addFilter('categoryFilter', function(collection, category) {
-  //   if (!category) return collection;
-  //   const filtered = collection.filter(item => item.data.category == category);
-  //   return filtered;
-  // });
+  });
 
   // Syntax Highlighting for Code blocks
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -78,7 +73,7 @@ module.exports = function (eleventyConfig) {
   });
 
   // Copy Image Folder to /_site
-  // eleventyConfig.addPassthroughCopy("./src/static/img");
+  eleventyConfig.addPassthroughCopy("./src/static/img");
 
   // Copy favicon to route of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");

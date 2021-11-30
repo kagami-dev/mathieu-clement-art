@@ -2,7 +2,7 @@ image: /static/img/test_img.jpg
 lifeEvent:
   - year: 2021
     description: Diplômé des beaux arts, Paris, Tx
-  - year: "9190"
+  - year: 9190
     description: Né à New York City yeaaaah
   - year: 2999
     description: Became Millionaire

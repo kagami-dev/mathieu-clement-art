@@ -7,10 +7,13 @@ path: home
 <div class="container lg:px-0 mx-auto">
   <div class="">
     <div class="font-bold">Actu</div>
-    {% for event in events.event %}
+    {% assign artEvents = eventList.events | sortByStartDate %}
+    {% for event in artEvents%}
+    {%if event.outdated == false %}
     <div class="font-semibold">{{event.title}}</div>
     <div>{{event.location}}</div>
-    <div class="mb-3">du {{event.startdate | readableDate }} au {{event.enddate | readableDate }}</div>
+    <div class="mb-3">du {{event.startDate | readableDate }} au {{event.endDate | readableDate }}</div>
+    {%endif%}
     {% endfor %}
   </div>
 

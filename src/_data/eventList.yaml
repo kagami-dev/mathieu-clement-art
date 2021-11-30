@@ -1,0 +1,22 @@
+events:
+  - outdated: false
+    startDate: 2021-11-30T19:49:02.846Z
+    endDate: 2021-11-29T19:49:02.859Z
+    title: Exposition
+    location: Grand Palais
+    url: www.google.com
+    image: /static/img/stepan-alekseev27.jpg
+  - outdated: true
+    startDate: 2020-06-09T18:49:45.101Z
+    endDate: 2021-11-30T19:49:45.120Z
+    title: Vernissage
+    location: J'peux pas j'ai poney
+    url: www.google.fr
+    image: /static/img/stepan-alekseev8.jpg
+  - outdated: true
+    startDate: 2021-05-12T19:08:23.993Z
+    endDate: 2021-07-14T19:08:24.010Z
+    title: Vernissage
+    location: Petit Palais
+    url: www.google.fr
+    image: /static/img/visor.jpg

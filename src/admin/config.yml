@@ -36,7 +36,7 @@ collections:
     files:
       - label: "Liste d'oeuvres" 
         name: "artworkList"
-        file: "src/_data/artworkList.json"
+        file: "src/_data/artworkList.yaml"
         extension: "json"
         fields:
           - label: "Oeuvres"
@@ -73,11 +73,11 @@ collections:
       preview: false
     files:
       - label: "Évènements"
-        name: "events"
-        file: "src/_data/events.yaml"
+        name: "eventList"
+        file: "src/_data/eventList.yaml"
         fields:
           - label: "Évènement"
-            name: event
+            name: events
             widget: list
             create: true
             editor:
@@ -85,8 +85,8 @@ collections:
             fields:
               - { label: "Titre", name: "title", widget: "string" }
               - { label: "Lieu", name: "location", widget: "string" }
-              - { label: "Date debut", name: "startdate", widget: "date" }
-              - { label: "Date fin", name: "enddate", widget: "date" }
+              - { label: "Date debut", name: "startDate", widget: "date" }
+              - { label: "Date fin", name: "endDate", widget: "date" }
               - { label: URL, name: url, widget: string }
               - { label: "Passée?", name: outdated, widget: boolean, default: false }
               - label: "Image"
@@ -119,5 +119,5 @@ collections:
             editor:
               preview: false
             fields:
-              - { label: "Année", name: "year", widget: "string" }
+              - { label: "Année", name: "year", widget: "date" }
               - { label: "Description", name: "description", widget: "string" }
